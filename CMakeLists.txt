@@ -25,7 +25,7 @@ target_compile_options(version_lib PRIVATE
 )
 
 
-add_executable(PrintIP ${SOURCE_PATH}/main.cpp)
+add_executable(Matrix ${SOURCE_PATH}/main.cpp)
 
 
 set_target_properties(Matrix PROPERTIES

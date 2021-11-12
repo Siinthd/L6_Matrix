@@ -1,5 +1,5 @@
 #pragma once
 
-#cmakedefine PROJECT_VERSION_PATCH @PrintIP_VERSION_PATCH@
+#cmakedefine PROJECT_VERSION_PATCH @Matrix_VERSION_PATCH@
 
 int Version();
