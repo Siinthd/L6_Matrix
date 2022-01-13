@@ -3,22 +3,28 @@
 
 int main()
 {
-    Matrix<int, -1> test; // бесконечная матрица int заполнена значениями -1
-	assert(test.size() == 0); // все ячейки свободны
-	auto a = test[0, 0];
-	assert(a == -1);
-	assert(test.size() == 0);
-	test[100, 100] = 314;
-	assert((test[100, 100] ) == 314);
-	assert(test.size() == 1);
-
 	Matrix<int, 0> matrix;
 	const size_t SIZE = 10;
-	for (int i = 0; i < 10; i++)
-		matrix[i][i] = matrix[10 - 1 - i][i] = i; // N = 10, i = [0, N)
-    
-    std::cout<<matrix.size()<<std::endl;
 
-    return 0;
+	for (int i = 0; i < SIZE; i++)
+		matrix[i][i] = matrix[SIZE - 1 - i][i] = i; // N = 10, i = [0, N)
+
+	std::cout << "Matrix size: " << matrix.size() << std::endl;
+
+	for (int i = 1; i < SIZE-1; i++)
+	{
+		for (int j = 1; j < SIZE-1; j++)
+		{
+			std::cout << matrix[i][j] << ' ';
+		}
+		std::cout << std::endl;
+	}
+
+	for(auto it : matrix)
+	{
+			std::cout<<'[' << it.first[0] << ',' << it.first[1]
+				<<"] = "<<it.second;
+		std::cout<<std::endl;
+	}
+	return 0;
 }
-
